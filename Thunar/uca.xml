@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1772328500943498-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>Set as the wallpaper</name>
+	<submenu></submenu>
+	<unique-id>1772583509126199-1</unique-id>
+	<command>bash -c &apos;~/.config/hypr/scripts/set-wallpaper.sh %f&apos;</command>
+	<description>Ustaw obraz jako tapetę i zastosuj motyw kolorystyczny</description>
+	<range>*</range>
+	<patterns>*.jpg;*.jpeg;*.png;*.webp;*.gif;*.mp4</patterns>
+	<image-files/>
+	<other-files/>
+	<video-files/>
+</action>
+</actions>
