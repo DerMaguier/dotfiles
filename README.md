@@ -1,4 +1,4 @@
 # CachyOS Dotfiles
 
-![Desktop](./Screenshots/desktop.png)
-![SDDM Login Screen](./Screenshots/sddm.png)
+![Desktop](./Screenshots/desktop.jpg)
+![SDDM Login Screen](./Screenshots/sddm.jpg)
