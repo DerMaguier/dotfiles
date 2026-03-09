@@ -1,21 +1,165 @@
 @import url("../../.cache/wal/colors-waybar.css");
 
-
 * {
     font-family: "InconsolataLGC Nerd Font", "Inconsolata LGC", monospace;
-    font-size: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
 }
-
 
 window#waybar {
-    background-color: @background; /* Dynamiczne tło z tapety */
-    color: @foreground;            /* Dynamiczny tekst */
+    background-color: transparent;
+    color: @foreground;
 }
 
-/* Przykładowe stylowanie modułu */
-#clock, #pulseaudio, #network, #workspaces, #custom-show_desktop {
-    padding: 0 10px;
-    background-color: @color0; /* Kolor z palety tapety */
-    border-radius: 8px;
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 4px 4px;
+}
+
+#workspaces,
+#custom-show_desktop,
+#taskbar,
+#tray,
+#network,
+#wireplumber,
+#clock,
+#battery {
+    background-color: alpha(@color0, 0.5); /*@color0*/
+    color: @foreground;
+    padding: 2px 8px;
+    margin: 4px 0px;
+}
+
+#workspaces {
+    border-radius: 10px 0px 0px 10px;
+    padding: 2px 4px;
+    margin-right: 0;
+    margin-left: 2px;
+}
+
+#custom-show_desktop {
+    border-radius: 0px 10px 10px 0px;
+    padding: 2px 8px;
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+#workspaces button {
+    padding: 2px 6px;
+    color: @foreground;
+    background: transparent;
+    border-radius: 6px;
+    margin: 1px 1px;
+}
+
+#workspaces button:hover {
+    background-color: @color1;
+}
+
+#workspaces button.active {
+    background: transparent;
+    color: @foreground;
+}
+
+#taskbar {
+    border-radius: 10px;
+    padding: 2px 4px;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+#taskbar button {
+    padding: 2px 4px;
+    background: transparent;
+    border-radius: 6px;
+    margin: 1px 1px;
+}
+
+#taskbar button:hover {
+    background-color: @color1;
+}
+
+#taskbar button.active {
+    background: transparent;
+}
+
+
+#tray {
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color1;
+}
+
+#network {
+    border-radius: 10px 0px 0px 10px;
+    padding: 2px 8px;
+    margin-left: 4px;
+    margin-right: 0;
+}
+
+#wireplumber.sink {
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2px 8px;
+    background-color: alpha(@color0, 0.5); /*@color0*/
+    color: @foreground;
+}
+
+#wireplumber.source {
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 0;
+    margin-right: 4px;
+    padding: 2px 8px;
+    background-color: alpha(@color0, 0.5); /*@color0*/
+    color: @foreground;
+}
+
+#clock {
+    border-radius: 10px;
+    padding: 2px 12px;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+#battery {
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+#battery.warning {
+    background-color: @color3;
+    color: @background;
+}
+
+#battery.critical {
+    background-color: @color1;
+    color: @background;
+    animation: blink 0.5s steps(1) infinite;
+}
+
+@keyframes blink {
+    to { background-color: @color0; color: @foreground; }
+}
+
+#mpris {
+    background-color: alpha(@color0, 0.5);
+    border-radius: 10px;
+    padding: 2px 14px;
     margin: 4px 2px;
 }
