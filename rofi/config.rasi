@@ -1,76 +1,123 @@
 configuration {
-    modi:           "drun,filebrowser,calc";
-    show-icons:     true;
-    icon-theme:     "Papirus-Dark";
+    modi:                "drun,filebrowser,calc";
+    show-icons:          true;
+    icon-theme:          "Papirus-Dark";
     drun-display-format: "{name}";
-    kb-mode-next:       "Tab";
-    kb-row-down:        "Down,Control+j";
-    kb-element-next:    "";
-    kb-accept-entry:    "Return,KP_Enter";
+    kb-mode-next:        "Tab";
+    kb-row-down:         "Down,Control+j";
+    kb-element-next:     "";
+    kb-accept-entry:     "Return,KP_Enter";
     filebrowser {
-        directory:      "/home/dermaguier";
-        sorting-method: "name";
-        directories-first: true;
+        directory:          "/home/dermaguier";
+        sorting-method:     "name";
+        directories-first:  true;
     }
-    calc-command:   "echo -n '{result}' | wl-copy";
-    display-drun:   " Apps";
+    calc-command:        "echo -n '{result}' | wl-copy";
+    display-drun:        " Apps";
     display-filebrowser: " Files";
-    display-calc:   "󰃬 Calc";
+    display-calc:        "󰃬 Calc";
 }
 
+/* Kolory pywal — kolejność importów jest ważna */
 @import "/home/dermaguier/.cache/wal/colors-rofi-dark.rasi"
+@import "/home/dermaguier/.cache/wal/colors-rofi-alpha.rasi"
 
 * {
-    font:           "InconsolataLGC Nerd Font 11";
-    background-color: transparent;
+    font:               "InconsolataLGC Nerd Font 11";
+    background-color:   transparent;
+    text-color:         @foreground;
 }
 
 #window {
-    background-color: rgba(5, 17, 23, 0.3);
-    border:         1px solid;
-    border-color:   @selected-normal-background;
-    border-radius:  10px;
-    padding:        10px;
-    width:          360px;
+    background-color:   @bg-alpha;
+    border:             1px solid;
+    border-color:       @selected-normal-background;
+    border-radius:      10px;
+    padding:            10px;
+    width:              360px;
+}
+
+#mainbox {
+    border:             0;
+    padding:            0;
 }
 
 #inputbar {
-    padding:        5px 8px;
-    margin:         0px 0px 6px 0px;
-    spacing:        6px;
+    background-color:   @bg-alpha-low;
+    border-radius:      6px;
+    padding:            5px 8px;
+    margin:             0px 0px 8px 0px;
+    spacing:            6px;
+    text-color:         @foreground;
+}
+
+#prompt {
+    text-color:         @selected-normal-background;
+}
+
+#entry {
+    text-color:         @foreground;
+}
+
+#textbox-prompt-colon {
+    text-color:         @selected-normal-background;
+    expand:             false;
+    str:                ":";
+    margin:             0px 4px 0px 0px;
 }
 
 #listview {
-    lines:          6;
-    spacing:        1px;
+    border:             0px;
+    lines:              6;
+    spacing:            2px;
+    padding:            0px;
+    scrollbar:          false;
 }
 
 #element {
-    padding:        4px 8px;
-    spacing:        8px;
+    border-radius:      6px;
+    padding:            4px 8px;
+    spacing:            8px;
+}
+
+#element.normal.normal {
+    background-color:   transparent;
+    text-color:         @foreground;
+}
+
+#element.selected.normal {
+    background-color:   @accent-alpha;
+    text-color:         @foreground;
+}
+
+#element.alternate.normal {
+    background-color:   transparent;
+    text-color:         @foreground;
 }
 
 #element-icon {
-    size:           16px;
-}#element-text {
-    vertical-align: 0.5;
+    size:               16px;
+}
+
+#element-text {
+    vertical-align:     0.5;
 }
 
 #mode-switcher {
-    border:         1px 0px 0px 0px;
-    border-color:   rgba(69, 122, 147, 0.3);
-    padding:        8px 0px 0px 0px;
-    spacing:        4px;
+    border:             1px 0px 0px 0px;
+    border-color:       @selected-normal-background;
+    padding:            6px 0px 0px 0px;
+    spacing:            4px;
 }
 
 #button {
-    padding:        4px 10px;
-    border-radius:  6px;
-    text-color:     @foreground;
-    background-color: transparent;
+    padding:            4px 10px;
+    border-radius:      6px;
+    text-color:         @foreground;
+    background-color:   transparent;
 }
 
 #button.selected {
-    background-color: rgba(69, 122, 147, 0.5);
-    text-color:     @foreground;
+    background-color:   @accent-alpha;
+    text-color:         @foreground;
 }
