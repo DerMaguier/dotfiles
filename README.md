@@ -6,3 +6,4 @@ Core stack: **Hyprland**, Waybar, SDDM.
 
 ![Desktop](./Screenshots/desktop.png)
 ![SDDM Login Screen](./Screenshots/sddm.png)
+![Rofi](./Screenshots/rofi.png)
