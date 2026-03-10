@@ -23,4 +23,11 @@ sleep 1.5
 pkill -x nm-applet 2>/dev/null
 nm-applet --indicator &
 
+SDDM_BG="/usr/share/sddm/themes/sugar-dark/wallpaper.jpg"
 
+if [[ "$WALLPAPER" == *.mp4 ]]; then
+    ffmpeg -i "$WALLPAPER" -vframes 1 -q:v 2 /tmp/sddm-wallpaper.jpg -y 2>/dev/null
+    sudo cp /tmp/sddm-wallpaper.jpg "$SDDM_BG"
+else
+    sudo cp "$WALLPAPER" "$SDDM_BG"
+fi
