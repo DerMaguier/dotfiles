@@ -1,0 +1,21 @@
+@import url("../../.cache/wal/colors-waybar.css");
+
+
+* {
+    font-family: "InconsolataLGC Nerd Font", "Inconsolata LGC", monospace;
+    font-size: 15px;
+}
+
+
+window#waybar {
+    background-color: @background; /* Dynamiczne tło z tapety */
+    color: @foreground;            /* Dynamiczny tekst */
+}
+
+/* Przykładowe stylowanie modułu */
+#clock, #pulseaudio, #network, #workspaces, #custom-show_desktop {
+    padding: 0 10px;
+    background-color: @color0; /* Kolor z palety tapety */
+    border-radius: 8px;
+    margin: 4px 2px;
+}
