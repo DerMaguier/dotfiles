@@ -6,7 +6,7 @@ WALLPAPER="${1:-$HOME/Downloads/ToriGate.jpg}"
 
 
 pkill -x gslapper 2>/dev/null
-gslapper -o "fill" "*" "$WALLPAPER" &
+gslapper -o "no-audio loop fill" "*" "$WALLPAPER" &
 echo "$WALLPAPER" > ~/.config/hypr/current-wallpaper
 
 wal -i "$WALLPAPER" -n  
@@ -28,6 +28,15 @@ cat > ~/.cache/wal/colors-rofi-alpha.rasi << EOF
 }
 EOF
 
+ULTRAWIDE=$(hyprctl monitors -j | python3 -c "
+import json,sys
+monitors = json.load(sys.stdin)
+for m in monitors:
+    if 'PL3480WQ' in m['description']:
+        print(m['name'])
+")
+sed -i "s/\"output\": \"DP-[0-9]*\"/\"output\": \"$ULTRAWIDE\"/" ~/.config/waybar/config
+sed -i "s/\"output\": \"!DP-[0-9]*\"/\"output\": \"!$ULTRAWIDE\"/" ~/.config/waybar/config
 pkill -x waybar 2>/dev/null
 waybar &
 

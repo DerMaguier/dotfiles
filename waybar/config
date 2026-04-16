@@ -1,6 +1,6 @@
 [
     {
-        "output": "DP-3", 
+        "output": "DP-6", 
         "layer": "top",
         "position": "top",
         "height": 34,
@@ -15,8 +15,8 @@
         "format-paused": "⏸ {artist} - {title}",
         "format-stopped": "(OwO)",
         "max-length": 50,
-        "player": "brave",
-        "ignored-players": ["firefox"]
+        "player": "playerctld",
+        "scroll-step": 5
         },     
         "modules-right": ["tray", "network", "wireplumber#sink", "wireplumber#source", "clock"],
 
@@ -82,7 +82,7 @@
         // ==========================================
         // KONFIGURACJA DLA POZOSTAŁYCH MONITORÓW
         // ==========================================
-        "output": "!DP-3",
+        "output": "!DP-6",
         "layer": "top",
         "position": "top",
         "height": 34,
